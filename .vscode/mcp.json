@@ -1,0 +1,12 @@
+{
+	"servers": {
+		"demo-calculator": {
+			"type": "stdio",
+			"command": "/home/ubuntu/tool/mcp-server-demo/.venv/bin/python",
+			"args": [
+				"/home/ubuntu/tool/mcp-server-demo/server_fastmcp.py"
+			],
+			"description": "MCP Server Demo — 计算器 + 天气查询（stdio 模式）"
+		}
+	}
+}

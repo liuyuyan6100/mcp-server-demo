@@ -13,7 +13,7 @@ MCP Server 示例 —— 用 FastMCP 方式开发（推荐入门）
 from mcp.server.fastmcp import FastMCP
 
 # 创建 server 实例，名字会出现在 Hermes 的 mcp_servers 配置里
-mcp = FastMCP("demo-calculator")
+mcp = FastMCP("demo-calculator", host="0.0.0.0", port=8765)
 
 
 @mcp.tool()
@@ -90,7 +90,7 @@ if __name__ == "__main__":
     if "--http" in sys.argv:
         # HTTP 模式：监听 8765 端口，适合远程调用
         print("Starting MCP server on http://0.0.0.0:8765/mcp")
-        mcp.run(transport="streamable-http", host="0.0.0.0", port=8765)
+        mcp.run(transport="streamable-http")
     else:
         # stdio 模式：通过 stdin/stdout 通信，Hermes 默认用这个
         mcp.run(transport="stdio")
