@@ -10,6 +10,21 @@ mcp-server-demo/
 └── README.md            # 本文件
 ```
 
+## 快速开始
+
+```bash
+# 1. 初始化环境（创建 venv + 安装依赖）
+bash setup.sh
+
+# 2. 运行测试
+.venv/bin/python test_server.py          # 测试 FastMCP 版本
+.venv/bin/python test_server.py raw      # 测试原生 SDK 版本
+
+# 或者先激活 venv，之后直接用 python
+source .venv/bin/activate
+python test_server.py
+```
+
 ## 两种开发方式对比
 
 ### FastMCP（推荐入门）
@@ -30,7 +45,7 @@ mcp-server-demo/
 ```yaml
 mcp_servers:
   demo:
-    command: "python"
+    command: "/home/ubuntu/mcp-server-demo/.venv/bin/python"
     args: ["/home/ubuntu/mcp-server-demo/server_fastmcp.py"]
 ```
 
